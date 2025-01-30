@@ -1,0 +1,20 @@
+.table{
+    border-collapse: collapse;
+    border-spacing: 5px;
+    width: 100%;
+    padding: 10px;
+}
+th, td {
+    padding: 12px; /* Espacio dentro de las celdas */
+    border: 1px solid #ccc; /* Borde de las celdas */
+    width: 30.13%; 
+    text-align: left;
+}
+th { background-color: #47596d; /* Color de fondo */ 
+    color: #dfd8d8; /* Color del texto */ 
+    padding: 10px; /* Espacio interior */ }
+
+button{
+    background-color: rgb(38, 109, 167);
+    color: white;
+}

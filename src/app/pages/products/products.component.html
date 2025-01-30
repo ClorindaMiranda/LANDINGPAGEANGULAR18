@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>This is our huge retail of products :</h1>
+    <h2>Catálogo de Productos</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Inventory</th>
+          <th scope="col">Image</th>
+          <th scope="col">Detail</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (products of productList; track $index) {
+          <tr>
+            <th scope="row">{{products.productId}}</th>
+            <td>{{products.productName}}</td>
+            <td>{{products.productDescription}}</td>
+            <td>{{products.price}}</td>
+            <td>{{products.inventory}}</td>
+            <td>{{products.image}}</td>
+            <td><button type="button" class="btn btn-dark" (click)="navigate(products.productId)">Details</button></td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+  

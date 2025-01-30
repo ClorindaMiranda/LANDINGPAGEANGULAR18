@@ -1,0 +1,28 @@
+nav {
+    background-color: #0a0a0a;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+nav ul li a:hover {
+    background-color: #d6d7db;
+}
+
+.general-styles{
+    background-color: rgb(10, 5, 5);
+    color: white;
+}
