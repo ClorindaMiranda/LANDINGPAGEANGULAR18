@@ -5,13 +5,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [CommonModule,ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
 export class ContactComponent implements OnInit{
     
-  contactForm?: FormGroup;
+  contactForm!: FormGroup;
 
   constructor( private formbuilder: FormBuilder){
     this.contactForm =this.formbuilder.group({
@@ -21,8 +21,8 @@ export class ContactComponent implements OnInit{
   }
 
 enviar(event:Event) {
-  event.preventDefault();
-  console.log('enviado');
+  event.preventDefault();           //prevenir que se reinicie la pagina
+  console.log(this.contactForm.value);
 }
 ngOnInit(): void {
   throw new Error('Method not implemented.');
