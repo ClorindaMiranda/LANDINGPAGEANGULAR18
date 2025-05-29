@@ -26,3 +26,11 @@ nav ul li a:hover {
     background-color: rgb(10, 5, 5);
     color: white;
 }
+.logo{
+    width: 60px;
+    height: 50px;
+    margin-left: 20px;
+    justify-content:"left";
+    align-items:"left";
+}
+    

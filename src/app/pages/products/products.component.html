@@ -1,23 +1,20 @@
-<form>
   <mat-form-field>
     <mat-label>Product Name</mat-label>
     <input type="text" 
             matInput
            [formControl]="productCtrl"
            [matAutocomplete]="auto"
-           placeholder="Product Name"
            (keydown.enter)="onEnter($event)"
+           placeholder="Product Name"
            >
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onOptionSelected($event.option.value)">
       <mat-option *ngFor="let product of filterProducts | async" 
             [value]="product"
-            (click)="navigate(product.productId)">
-  {{ product.productDescription }}
-</mat-option>
-
+            (click)="navigate(product.productId)">   
+            {{ product.productDescription }}
+       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-</form>
 
 <div class="container">
   <h1>This is our huge retail of products :</h1>

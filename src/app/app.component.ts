@@ -8,6 +8,10 @@ import { IProduct } from './models/product.model';
 import { ApiService } from './services/api.service';
 import { Observable, of } from 'rxjs';
 
+//Angular Material
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-root',
@@ -19,6 +23,8 @@ import { Observable, of } from 'rxjs';
     FormsModule,
     ReactiveFormsModule,
     MatAutocompleteModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
