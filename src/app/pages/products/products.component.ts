@@ -9,8 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import {MatInputModule} from '@angular/material/input';
 import  {MatFormFieldModule} from '@angular/material/form-field';
-
-
 @Component({
   selector: 'app-products',
   standalone: true,
@@ -27,14 +25,13 @@ import  {MatFormFieldModule} from '@angular/material/form-field';
 })
 export class ProductsComponent implements OnInit {
 
+  productCtrl = new FormControl<IProduct | null>(null);
+  filterProducts: Observable<IProduct[]> = of([]);
+
   productList: IProduct[] = [];
   allProducts: IProduct[] = [];
   private  _apiservice = inject(ApiService);
   private _router= inject (Router)   //para que navegue en el detalle del boton
-
-  
-  filterProducts: Observable<IProduct[]> = of([]);
-  productCtrl = new FormControl<IProduct | null>(null);
 
   ngOnInit(): void {
     this._apiservice.getProducts().subscribe((data: IProduct[]) => {
@@ -85,7 +82,6 @@ onEnter(event: KeyboardEvent | any): void {
     console.log('El valor ingresado no es válido');
   }
 }
-
 onProductSelected(selected: IProduct): void {           //llena la tabla al seleccionar producto
   if (selected && !this.productList.find(p => p.productId === selected.productId)) {
     this.productList.push(selected);
@@ -97,6 +93,5 @@ onProductSelected(selected: IProduct): void {           //llena la tabla al sele
     this.productCtrl.setValue(selectedProduct);
     this.navigate(selectedProduct.productId);
   }
-
 
 }

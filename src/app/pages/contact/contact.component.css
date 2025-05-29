@@ -1,3 +1,27 @@
 .container{
     padding-bottom: 350px;
 }
+h2 {
+    text-align: center;
+    color: #0a0a0a;
+    justify-content: center;
+}
+button{
+    display: block;
+    margin: 0 auto;
+    background-color: #0a0a0a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.spinner {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
